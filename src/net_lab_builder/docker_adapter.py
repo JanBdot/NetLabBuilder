@@ -267,7 +267,7 @@ class DockerAdapter:
         for container in self.get_containers():
             container.stop()
 
-    def prune(self, containers=True, networks=True, volumes=True, images=True) -> None:
+    def prune(self, containers=True, networks=True, volumes=False, images=False) -> None:
         """
         This method performs selective pruning of Docker resources associated with the label specified by 'self.__label'.
         It removes unused or dangling containers, networks, volumes, and images based on the provided boolean arguments.
@@ -439,6 +439,7 @@ class DockerAdapter:
                 volumes=["pcap_data:/pcap"],
                 labels=[self.__label],
             )
+            self.__pcap_merger.reload()
 
     def __get_pcap_files(self) -> List[str]:
         """

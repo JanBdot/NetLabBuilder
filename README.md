@@ -3,11 +3,12 @@
 NetLabBuilder is a Python package that utilizes the Docker Python SDK to create and manage network environments.
 
 ## Installation
-The installation guide is only tested for Linux (Ubuntu 21.04) and Windows 10 with WSL2 (Ubuntu 20.04).
+The installation guide is only tested for Linux (Ubuntu 21.04) and Windows 11 with WSL2 (Ubuntu 20.04).
 ### Prerequisites
 - Python 3.8+
 - pip 20+
 - Docker 24
+- Ubuntu: python-venv
 
 ### Installation Script
 First clone this project and change directory to the project. Then run the setup script with the following command:
@@ -28,6 +29,8 @@ python3 -m venv nlb-venv
 . nlb-venv/bin/activate
 pip install -r requirements.txt
 ```
+
+For Linux you might need to do some [post installation steps](https://docs.docker.com/engine/install/linux-postinstall/), if you freshly installed docker.
 
 ## Usage
 There are four topology files in the `src/` folder that can be run with a command like this:
